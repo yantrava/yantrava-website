@@ -40,3 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 graphify-out/
+
+# local QA screenshots
+.playwright-mcp/
+*.local.jpeg
+
+# OMC local orchestration state
+.omc/

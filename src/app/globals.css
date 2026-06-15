@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ----------------------------------------------------------------------------
+   Yantrava Labs — design tokens
+   Two-tone: pure black canvas, white text. Atmosphere does the rest.
+---------------------------------------------------------------------------- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: #000000; /* canvas */
+  --color-ink-raised: #0a0a0b; /* raised surfaces */
+  --color-ink-line: rgba(255, 255, 255, 0.08); /* hairlines */
+  --color-bone: #f4f3ef; /* warm white — primary text */
+  --color-bone-dim: rgba(244, 243, 239, 0.62); /* secondary text */
+  --color-bone-faint: rgba(244, 243, 239, 0.38); /* tertiary / labels */
+  --color-halo: #6d7cff; /* the single restrained accent — used only in atmosphere/glow */
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #000000;
+  --foreground: #f4f3ef;
+}
+
+* {
+  border-color: var(--color-ink-line);
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Lenis drives scroll; keep native smooth off to avoid double-easing */
+  scroll-behavior: auto;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv01";
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-bone);
+  color: var(--color-ink);
+}
+
+/* Editorial italic display utility */
+.font-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+/* Mono eyebrow / index labels */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  /* 0.56 keeps the muted look while clearing WCAG AA contrast for small text */
+  color: rgba(244, 243, 239, 0.56);
+}
+
+/* ----------------------------------------------------------------------------
+   Film grain — fixed overlay above content, never intercepts pointer
+---------------------------------------------------------------------------- */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Word reveal: mask per split-type line so rising words clip vertically only
+   (never horizontally — that was clipping long words like "software"). */
+.reveal-words .line {
+  overflow: hidden;
+  padding-bottom: 0.12em;
+}
+
+/* Thin, quiet scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 243, 239, 0.14);
+  border-radius: 999px;
+}
+
+/* ----------------------------------------------------------------------------
+   Accessibility — honour reduced motion: kill transforms, show everything
+---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .will-reveal,
+  .js-ready .will-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

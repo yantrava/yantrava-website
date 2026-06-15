@@ -17,9 +17,21 @@ the serena `project_overview` memory, and the plan at
 - Next.js 15 App Router + React 19, TypeScript, Tailwind v4, Turbopack, `src/`, alias `@/*`.
 - Animation: `gsap` + `motion` (Motion for React).
 
-## Planned routes (not built)
-- `/`, `/about`, `/ventures` (+ `/ventures/rooted`, `/ventures/cardioguard`), `/team`,
-  `/careers`, `/contact`, `/privacy`, `/terms`.
+## Architecture decision (2026-06-15, post-research)
+- **v1 = single long-scroll page** (best practice for an early holdco; concentrates SEO,
+  lets investors/press scan the whole story in one session). Nav = on-page anchors only —
+  NO links to nonexistent pages.
+- Section order (thesis-forward, per review): Hero → The Model → Ventures → Values →
+  Founders → Contact + Footer.
+- Multi-page routes (`/about`, `/ventures/rooted`, `/ventures/cardioguard`, `/team`,
+  `/careers`) are **deferred** — add per-product sub-pages only once each product warrants
+  its own SEO/brand presence.
+
+## Open content gaps (need founders before launch)
+- Founder credentials (past-first facts) + real LinkedIn URLs for Manav & Rounnak.
+- Optional Rooted traction number (beta users / waitlist) for above-the-fold proof.
+- Founder photos → `/public/founders/{manav,rounnak}.jpg` (~1200×1500). Duotone placeholders for now.
+- CardioGuard copy is deliberately stage-honest (no efficacy/"clinical-grade" claims) — keep it that way.
 
 ## Log
 - 2026-06-15 — Repo scaffolded (create-next-app), `gsap` + `motion` installed, git initialized,
