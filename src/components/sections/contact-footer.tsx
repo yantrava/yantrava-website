@@ -2,6 +2,7 @@
 
 import { contact, nav, site } from "@/lib/site";
 import { FadeUp } from "@/components/ui/fade-up";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export function ContactFooter() {
   return (
@@ -35,19 +36,21 @@ export function ContactFooter() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <a
-            href={`mailto:${site.email}`}
-            data-cursor
-            className="group mt-12 inline-flex items-baseline gap-3 text-[clamp(1.5rem,4vw,2.75rem)] font-medium tracking-[-0.02em] text-bone"
-          >
-            <span className="relative">
-              {site.email}
-              <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-bone transition-transform duration-500 ease-out group-hover:scale-x-100" />
-            </span>
-            <span className="transition-transform duration-500 group-hover:translate-x-2">
-              ↗
-            </span>
-          </a>
+          <Magnetic strength={0.25} className="mt-12">
+            <a
+              href={`mailto:${site.email}`}
+              data-cursor
+              className="group inline-flex items-baseline gap-3 text-[clamp(1.5rem,4vw,2.75rem)] font-medium tracking-[-0.02em] text-bone"
+            >
+              <span className="relative">
+                {site.email}
+                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-bone transition-transform duration-500 ease-out group-hover:scale-x-100" />
+              </span>
+              <span className="transition-transform duration-500 group-hover:translate-x-2">
+                ↗
+              </span>
+            </a>
+          </Magnetic>
         </FadeUp>
 
         {/* Footer */}

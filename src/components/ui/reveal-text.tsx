@@ -13,10 +13,13 @@ export function RevealText({
   children,
   className = "",
   as: Tag = "p",
+  scrub = false,
 }: {
   children: string;
   className?: string;
   as?: "p" | "h2" | "h3";
+  /** When true, word reveal is scrubbed to scroll position (the Linear/Cosmos feel). */
+  scrub?: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -30,14 +33,20 @@ export function RevealText({
         opacity: 1,
         duration: 0.9,
         ease: "power3.out",
-        stagger: 0.035,
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 82%",
-          end: "top 42%",
-          scrub: false,
-          once: true,
-        },
+        stagger: scrub ? 0.4 : 0.035,
+        scrollTrigger: scrub
+          ? {
+              trigger: ref.current,
+              start: "top 85%",
+              end: "top 38%",
+              scrub: 0.8,
+            }
+          : {
+              trigger: ref.current,
+              start: "top 82%",
+              end: "top 42%",
+              once: true,
+            },
       });
       return () => {
         split.revert();

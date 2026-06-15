@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { nav, site } from "@/lib/site";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,12 +52,16 @@ export function SiteNav() {
             ))}
           </ul>
 
-          <a
-            href="#contact"
-            className="hidden rounded-full border border-[--color-ink-line] px-5 py-2 text-sm text-bone transition-colors hover:bg-bone hover:text-black md:inline-block"
-          >
-            Get in touch
-          </a>
+          <div className="hidden md:block">
+            <Magnetic>
+              <a
+                href="#contact"
+                className="inline-block rounded-full border border-[--color-ink-line] px-5 py-2 text-sm text-bone transition-colors hover:bg-bone hover:text-black"
+              >
+                Get in touch
+              </a>
+            </Magnetic>
+          </div>
 
           <button
             type="button"

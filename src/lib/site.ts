@@ -106,6 +106,33 @@ export const founders = [
   },
 ] as const;
 
+// Positioning ticker — meta tokens, not a testimonial carousel (the cliché).
+// Two rows scroll in opposite directions.
+export const marquee = {
+  rowA: [
+    "Independent product brands",
+    "Built in India",
+    "Est. 2026",
+    "One product at a time",
+    "Consumer software",
+    "Health-tech",
+  ],
+  rowB: [
+    "Rooted",
+    "CardioGuard",
+    "Trust over metrics",
+    "Built to last",
+    "A holding company",
+    "Software that earns trust",
+  ],
+} as const;
+
+// Cursor-spotlight statement — text sits dim and is brightened where the pointer moves.
+export const spotlight = {
+  lead: "Two products today.",
+  emphasis: "A portfolio built to last.",
+} as const;
+
 export const contact = {
   heading: "Build with us.",
   body: "For investors, partners, press, and people who want to build things that last.",

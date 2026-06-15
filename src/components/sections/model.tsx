@@ -24,6 +24,7 @@ export function Model() {
         </FadeUp>
         <RevealText
           as="p"
+          scrub
           className="text-[clamp(1.6rem,3.6vw,3rem)] font-medium leading-[1.12] tracking-[-0.02em] text-bone"
         >
           {manifesto.body}
