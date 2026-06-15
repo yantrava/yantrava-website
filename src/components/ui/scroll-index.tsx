@@ -40,34 +40,35 @@ export function ScrollIndex() {
   });
 
   return (
+    // Narrow column in the far-left gutter. The label sits BELOW its number (not
+    // to the right) so it can't run into the page text, and the whole index only
+    // shows at >=1440px where there's enough gutter beside the centred content.
     <nav
       aria-hidden="true"
-      className="pointer-events-none fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 xl:block"
+      className="pointer-events-none fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 min-[1440px]:block"
     >
-      <ul className="flex flex-col gap-4">
-        {SECTIONS.map((s, i) => (
-          <li key={s.id} className="flex items-center gap-3">
-            <span
-              className={`font-mono text-[0.65rem] tabular-nums transition-colors duration-500 ${
-                active === i ? "text-bone" : "text-bone-faint"
-              }`}
-            >
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span
-              className={`h-px bg-bone transition-all duration-500 ${
-                active === i ? "w-8 opacity-100" : "w-3 opacity-30"
-              }`}
-            />
-            <span
-              className={`font-mono text-[0.6rem] uppercase tracking-[0.2em] text-bone transition-all duration-500 ${
-                active === i ? "opacity-100" : "-translate-x-1 opacity-0"
-              }`}
-            >
-              {s.label}
-            </span>
-          </li>
-        ))}
+      <ul className="flex flex-col gap-5">
+        {SECTIONS.map((s, i) => {
+          const on = active === i;
+          return (
+            <li key={s.id} className="flex flex-col">
+              <span
+                className={`font-mono text-[0.65rem] tabular-nums transition-colors duration-500 ${
+                  on ? "text-bone" : "text-bone-faint"
+                }`}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span
+                className={`overflow-hidden font-mono text-[0.55rem] uppercase leading-none tracking-[0.18em] text-bone transition-all duration-500 ${
+                  on ? "mt-1.5 max-h-4 opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                {s.label}
+              </span>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
