@@ -12,13 +12,14 @@
 export const site = {
   name: "Yantrava Labs",
   legalName: "Yantrava Labs Private Limited",
-  email: "hello@yantrava.com",
+  tagline: "Building software that earns trust.",
+  email: "support@yantrava.com",
   location: "India",
   year: 2026,
 } as const;
 
 export const hero = {
-  label: "Holding company · Built in India",
+  label: "A house of software brands",
   // The position, not a description. One <em> word rendered in editorial serif.
   headline: ["We build software that", "earns", "long-term trust."],
   emphasis: "earns",
@@ -76,7 +77,7 @@ export const ventures = [
 ] as const;
 
 export const model = {
-  label: "The model",
+  label: "Model",
   heading: "Structured like a holding company. Built like a studio.",
   paragraphs: [
     "Yantrava follows Alphabet's logic at an early stage: each product is its own brand, with its own identity and roadmap, and the parent stays invisible to the people who use it.",
@@ -110,27 +111,21 @@ export const founders = [
 // Two rows scroll in opposite directions.
 export const marquee = {
   rowA: [
-    "Independent product brands",
-    "Built in India",
-    "Est. 2026",
+    "Trust over metrics",
+    "Years, not quarters",
     "One product at a time",
-    "Consumer software",
-    "Health-tech",
+    "Build for the decade",
+    "Focus over breadth",
+    "Earn it",
   ],
   rowB: [
-    "Rooted",
-    "CardioGuard",
-    "Trust over metrics",
+    "Ship, don't pitch",
+    "Minimal data, maximum care",
+    "Retention over reach",
+    "Independent by design",
     "Built to last",
-    "A holding company",
-    "Software that earns trust",
+    "Patient by design",
   ],
-} as const;
-
-// Cursor-spotlight statement — text sits dim and is brightened where the pointer moves.
-export const spotlight = {
-  lead: "Two products today.",
-  emphasis: "A portfolio built to last.",
 } as const;
 
 export const contact = {
@@ -139,8 +134,8 @@ export const contact = {
 } as const;
 
 export const nav = [
+  { label: "Model", href: "#model" },
   { label: "Ventures", href: "#ventures" },
-  { label: "The model", href: "#model" },
   { label: "Founders", href: "#founders" },
   { label: "Contact", href: "#contact" },
 ] as const;

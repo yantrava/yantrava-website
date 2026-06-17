@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ScrollTrigger, useGSAP } from "@/lib/gsap";
 
 const SECTIONS = [
-  { id: "model", label: "The model" },
+  { id: "model", label: "Model" },
   { id: "ventures", label: "Ventures" },
   { id: "values", label: "Principles" },
   { id: "founders", label: "Founders" },

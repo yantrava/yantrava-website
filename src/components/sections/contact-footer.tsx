@@ -58,9 +58,12 @@ export function ContactFooter() {
           <div className="flex flex-col justify-between gap-10 md:flex-row">
             <div>
               <p className="font-mono text-sm uppercase tracking-[0.32em] text-bone">
-                Yantrava
+                Yantrava Labs
               </p>
-              <p className="mt-4 max-w-[32ch] text-sm leading-relaxed text-bone-faint">
+              <p className="mt-3 max-w-[34ch] text-base leading-relaxed text-bone-dim">
+                {site.tagline}
+              </p>
+              <p className="mt-3 max-w-[32ch] text-sm leading-relaxed text-bone-faint">
                 {site.legalName} · Incorporated in {site.location}.
               </p>
             </div>

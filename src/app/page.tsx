@@ -3,7 +3,6 @@ import { Hero } from "@/components/sections/hero";
 import { Model } from "@/components/sections/model";
 import { Marquee } from "@/components/sections/marquee";
 import { Ventures } from "@/components/sections/ventures";
-import { Spotlight } from "@/components/sections/spotlight";
 import { Values } from "@/components/sections/values";
 import { Founders } from "@/components/sections/founders";
 import { ContactFooter } from "@/components/sections/contact-footer";
@@ -19,7 +18,6 @@ export default function Home() {
         <Model />
         <Marquee />
         <Ventures />
-        <Spotlight />
         <Values />
         <Founders />
         <ContactFooter />

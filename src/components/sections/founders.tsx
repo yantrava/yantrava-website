@@ -41,7 +41,7 @@ function FounderCard({
   return (
     <article className={index === 1 ? "md:mt-24" : ""}>
       <motion.div
-        className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[--color-ink-line]"
+        className="relative aspect-[4/5] w-full overflow-hidden rounded-frame border border-[--color-ink-line]"
         initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0 0 0)" }}
         whileInView={
           reduced ? { opacity: 1 } : { clipPath: "inset(0% 0 0 0)" }

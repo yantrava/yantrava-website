@@ -61,15 +61,15 @@ export function Ventures() {
           {/* Intro panel */}
           <div className="v-panel flex min-h-[80vh] flex-col justify-center px-6 md:h-screen md:px-16">
             <div className="mx-auto w-full max-w-[1100px]">
-              <p className="label-mono mb-8">Ventures — 02</p>
-              <h2 className="max-w-[18ch] text-[clamp(2.2rem,5.5vw,5rem)] font-medium leading-[0.98] tracking-[-0.03em] text-bone">
-                Two ventures.{" "}
+              <p className="label-mono mb-8">Ventures · 02</p>
+              <h2 className="max-w-[20ch] text-[clamp(2.2rem,5.5vw,5rem)] font-medium leading-[0.98] tracking-[-0.03em] text-bone">
+                Multiple ventures.{" "}
                 <span className="font-display font-normal italic">
-                  One way of building.
+                  A portfolio built to last.
                 </span>
               </h2>
               <p className="mt-8 max-w-[42ch] text-lg text-bone-dim">
-                Independent brands, built by the same hands. Scroll across.
+                Independent brands, built by the same hands.
               </p>
             </div>
           </div>
@@ -101,7 +101,7 @@ function VenturePanel({
     <article className="v-panel flex min-h-screen items-center px-6 py-24 md:h-screen md:px-16 md:py-0">
       <div className="mx-auto grid w-full max-w-[1100px] items-center gap-10 md:grid-cols-2 md:gap-16">
         {/* Visual frame — abstract, two-tone, accent used only as a faint glow */}
-        <div className="relative order-2 aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[--color-ink-line] md:order-1">
+        <div className="relative order-2 aspect-[4/5] w-full overflow-hidden rounded-frame border border-[--color-ink-line] md:order-1">
           <div
             className="absolute inset-0"
             style={{
