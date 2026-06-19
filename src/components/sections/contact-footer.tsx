@@ -63,9 +63,6 @@ export function ContactFooter() {
               <p className="mt-3 max-w-[34ch] text-base leading-relaxed text-bone-dim">
                 {site.tagline}
               </p>
-              <p className="mt-3 max-w-[32ch] text-sm leading-relaxed text-bone-faint">
-                {site.legalName} · Incorporated in {site.location}.
-              </p>
             </div>
 
             <nav aria-label="Footer" className="flex flex-col gap-3">
@@ -85,7 +82,6 @@ export function ContactFooter() {
             <p className="text-xs">
               © {site.year} {site.legalName}
             </p>
-            <p className="text-xs">Built in {site.location}.</p>
           </div>
         </div>
       </div>

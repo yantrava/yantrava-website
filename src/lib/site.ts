@@ -20,16 +20,17 @@ export const site = {
 
 export const hero = {
   label: "A house of software brands",
-  // The position, not a description. One <em> word rendered in editorial serif.
-  headline: ["We build software that", "earns", "long-term trust."],
-  emphasis: "earns",
-  sub: "Yantrava Labs is a holding company building independent product brands — one at a time.",
+  // Headline as explicit lines (each an array of rise-animated groups). Line 1
+  // stays on a single line at desktop; the `emphasis` group renders in serif italic.
+  headline: [["We build software ventures."], ["AI is our", "co-founder."]],
+  emphasis: "co-founder.",
+  sub: "Yantrava Labs is a holding company building independent product brands, one at a time.",
 } as const;
 
 export const manifesto = {
   // Word-by-word reveal on scroll. Reads as a stance.
   lead: "Most software is built to capture attention.",
-  body: "We build software that earns trust — and keeps it. Small teams, AI as leverage, real products in people's hands. One at a time.",
+  body: "We build software that earns trust, and keeps it. Small teams, AI as leverage, real products in people's hands.",
 } as const;
 
 export const values = [
@@ -81,7 +82,7 @@ export const model = {
   heading: "Structured like a holding company. Built like a studio.",
   paragraphs: [
     "Yantrava follows Alphabet's logic at an early stage: each product is its own brand, with its own identity and roadmap, and the parent stays invisible to the people who use it.",
-    "What the ventures share is infrastructure, capital discipline, and a way of building — small teams using AI as leverage to ship real products faster than their size suggests.",
+    "What the ventures share is infrastructure, capital discipline, and a way of building: small teams using AI as leverage to ship real products faster than their size suggests.",
     "Risk is contained by design. CardioGuard's clinical exposure is ring-fenced from the rest of the portfolio, and spins out the moment it reaches patients.",
   ],
 } as const;

@@ -32,16 +32,30 @@ export function Hero() {
           {hero.label}
         </p>
 
-        <h1 className="max-w-[16ch] text-[clamp(2.75rem,8vw,8rem)] font-medium leading-[0.95] tracking-[-0.03em] text-bone">
-          {hero.headline.map((part, i) => (
-            <Word key={i} delay={0.12 + i * 0.08}>
-              {part === hero.emphasis ? (
-                <span className="font-display font-normal italic">{part}</span>
-              ) : (
-                part
-              )}
-            </Word>
-          ))}
+        <h1 className="text-[clamp(2.25rem,6vw,5rem)] font-medium leading-[0.95] tracking-[-0.03em] text-bone">
+          {hero.headline.map((line, li) => {
+            const offset = hero.headline
+              .slice(0, li)
+              .reduce((n, l) => n + l.length, 0);
+            return (
+              <span
+                key={li}
+                className={`block ${li === 0 ? "md:whitespace-nowrap" : ""}`}
+              >
+                {line.map((part, pi) => (
+                  <Word key={`${li}-${pi}`} delay={0.12 + (offset + pi) * 0.08}>
+                    {part === hero.emphasis ? (
+                      <span className="font-display font-normal italic">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    )}
+                  </Word>
+                ))}
+              </span>
+            );
+          })}
         </h1>
 
         <p
