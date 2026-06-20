@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { nav, site } from "@/lib/site";
 import { ScrollTrigger, useGSAP } from "@/lib/gsap";
+import { Logo } from "@/components/ui/logo";
 
 /**
  * Wide "tubelight" navigation. The bar fills most of the top width with a margin
@@ -68,22 +69,17 @@ export function SiteNav() {
             : "mt-5 max-w-[1340px] px-6 py-3.5"
         }`}
       >
-        {/* Wordmark — " Labs" folds away on scroll */}
+        {/* Brand lockup — vector logo (mark + wordmark), contracts slightly on scroll */}
         <a
           href="#top"
           aria-label={`${site.name}, home`}
-          className={`shrink-0 whitespace-nowrap font-mono uppercase tracking-[0.28em] text-bone transition-all duration-500 ${
-            scrolled ? "text-[0.78rem]" : "text-[0.82rem]"
-          }`}
+          className="flex shrink-0 items-center text-bone"
         >
-          Yantrava
-          <span
-            className={`inline-block overflow-hidden align-bottom transition-all duration-500 ${
-              scrolled ? "max-w-0 opacity-0" : "max-w-[4rem] opacity-100"
+          <Logo
+            className={`w-auto transition-all duration-500 ${
+              scrolled ? "h-8" : "h-10"
             }`}
-          >
-            &nbsp;Labs
-          </span>
+          />
         </a>
 
         {/* Tubelight links */}

@@ -3,6 +3,7 @@
 import { contact, nav, site } from "@/lib/site";
 import { FadeUp } from "@/components/ui/fade-up";
 import { Magnetic } from "@/components/ui/magnetic";
+import { Logo } from "@/components/ui/logo";
 
 export function ContactFooter() {
   return (
@@ -57,10 +58,8 @@ export function ContactFooter() {
         <div className="mt-28 border-t border-[--color-ink-line] pt-10 md:mt-40">
           <div className="flex flex-col justify-between gap-10 md:flex-row">
             <div>
-              <p className="font-mono text-sm uppercase tracking-[0.32em] text-bone">
-                Yantrava Labs
-              </p>
-              <p className="mt-3 max-w-[34ch] text-base leading-relaxed text-bone-dim">
+              <Logo className="h-14 w-auto text-bone" />
+              <p className="mt-5 max-w-[34ch] text-base leading-relaxed text-bone-dim">
                 {site.tagline}
               </p>
             </div>
