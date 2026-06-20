@@ -36,9 +36,12 @@ export function RevealText({
         stagger: scrub ? 0.4 : 0.035,
         scrollTrigger: scrub
           ? {
+              // Deliberate, cinematic reveal: spread over more scroll distance
+              // and resolve as the line block reaches vertical centre — not low
+              // and rushed in the bottom third of the viewport.
               trigger: ref.current,
-              start: "top 85%",
-              end: "top 38%",
+              start: "top 92%",
+              end: "bottom 45%",
               scrub: 0.8,
             }
           : {

@@ -47,6 +47,12 @@ export function SiteNav() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
   const reduce = useReducedMotion();
@@ -135,7 +141,7 @@ export function SiteNav() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center md:hidden"
+            className="-mr-1.5 flex h-11 w-11 items-center justify-center md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >

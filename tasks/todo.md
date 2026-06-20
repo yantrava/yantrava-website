@@ -57,3 +57,27 @@ fullscreen-shader renderer.
 - Minor: Ventures intro copy says "Scroll across" (desktop horizontal); reads slightly off on
   mobile where panels stack — make responsive later.
 - Future: dedicated /ventures/* + /about pages once each product warrants its own SEO presence.
+
+## E2E audit pass (2026-06-20)
+Ran a 6-dimension static audit (workflow, adversarially verified) + a live runtime pass
+(prod build served + Chrome CDP). **Runtime verdict: production-solid** — TSC/lint/build clean,
+FCP ~100ms, full-page wheel scroll flat 60fps (0 frames >24ms), zero console errors.
+
+**Fixed this pass:**
+- Smoothness/robustness: ScrollTrigger now refreshes on `document.fonts.ready` (font-swap desync);
+  removed persistent `will-change` from marquee; dropped dead `.will-reveal`/`js-ready` guard.
+- Perf: `optimizePackageImports` for motion/gsap/@gsap/react; explicit font preload (sans+serif on,
+  mono off); marquee.tsx → server component.
+- A11y: global `:focus-visible` ring + skip-link; `--color-bone-faint` 0.38→0.52 (clears AA 4.9:1);
+  founder portrait placeholder `role=img`+aria-label, decorative glyph/label aria-hidden; hamburger
+  36→44px touch target; mobile menu Escape-to-close; fluid founder initials (clamp).
+- SEO/share: OG share image (app/opengraph-image.tsx via next/og, static), robots.ts, sitemap.ts,
+  canonical, Organization JSON-LD, openGraph locale, viewport-fit=cover.
+
+**Deferred (non-blocking):**
+- Founder photos (`public/founders/{manav,rounnak}.jpg`) + real LinkedIn URLs — needs founders.
+- Web manifest + apple-touch-icon + real favicon — needs final logo/icon asset.
+- Scroll-spy per-frame getBoundingClientRect micro-opt (scroll-index + site-nav) — 60fps measured, low priority.
+- Mobile menu full focus-trap (Escape + body-lock shipped; trap deferred).
+- Dead design tokens (`--color-ink-raised`, ease tokens), Ventures "· 02" eyebrow numbering — cosmetic.
+- Audit flagged "Partners in Crime" eyebrow as off-register — **kept by explicit user choice.**

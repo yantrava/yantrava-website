@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <SiteNav />
       <ScrollIndex />
-      <main>
+      <main id="main">
         <Hero />
         <Model />
         <Marquee />

@@ -10,7 +10,7 @@
   --color-ink-line: rgba(255, 255, 255, 0.08); /* hairlines */
   --color-bone: #f4f3ef; /* warm white — primary text */
   --color-bone-dim: rgba(244, 243, 239, 0.62); /* secondary text */
-  --color-bone-faint: rgba(244, 243, 239, 0.38); /* tertiary / labels */
+  --color-bone-faint: rgba(244, 243, 239, 0.52); /* tertiary / labels — 0.52 clears WCAG AA (4.9:1) while staying dimmer than bone-dim */
   --color-halo: #6d7cff; /* the single restrained accent — used only in atmosphere/glow */
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -56,6 +56,32 @@ body {
 ::selection {
   background: var(--color-bone);
   color: var(--color-ink);
+}
+
+/* Keyboard focus — visible ring for every interactive element (mouse users
+   keep a clean look via :focus-visible). */
+:where(a, button, [tabindex], input, summary):focus-visible {
+  outline: 2px solid var(--color-bone);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Skip-to-content link — off-screen until focused. */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  border-radius: 9999px;
+  background: var(--color-bone);
+  color: var(--color-ink);
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  transition: transform 0.2s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 /* Editorial italic display utility */
@@ -133,7 +159,8 @@ body {
   animation-name: marquee-x;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  will-change: transform;
+  /* No persistent will-change: a continuously-animating transform is already
+     promoted by the browser; pinning a layer for the whole session wastes memory. */
 }
 .group:hover .marquee-track {
   animation-play-state: paused;
@@ -178,10 +205,5 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
-  }
-  .will-reveal,
-  .js-ready .will-reveal {
-    opacity: 1 !important;
-    transform: none !important;
   }
 }

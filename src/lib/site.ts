@@ -37,7 +37,7 @@ export const values = [
   {
     index: "01",
     title: "Build",
-    body: "We are builders. We ship products people use — not roadmaps, not decks.",
+    body: "Builders ship. We put real products in front of real people and stand behind what we make.",
   },
   {
     index: "02",
@@ -47,12 +47,12 @@ export const values = [
   {
     index: "03",
     title: "Think in decades",
-    body: "We optimise for the tenth year, not the launch week. Retention over reach.",
+    body: "Most software optimises for the first week. We optimise for the long compound — durability over momentum.",
   },
   {
     index: "04",
-    title: "One at a time",
-    body: "Focus is the strategy. Each venture earns our full attention before the next begins.",
+    title: "Full attention",
+    body: "Focus is the strategy. Each venture gets everything we have until it can stand on its own.",
   },
 ] as const;
 
@@ -81,7 +81,7 @@ export const model = {
   label: "Model",
   heading: "Structured like a holding company. Built like a studio.",
   paragraphs: [
-    "Yantrava follows Alphabet's logic at an early stage: each product is its own brand, with its own identity and roadmap, and the parent stays invisible to the people who use it.",
+    "Each product we build is its own company in miniature — its own name, its own identity, its own roadmap. Yantrava is the structure behind them, deliberately invisible to the people who actually use the products.",
     "What the ventures share is infrastructure, capital discipline, and a way of building: small teams using AI as leverage to ship real products faster than their size suggests.",
     "Risk is contained by design. CardioGuard's clinical exposure is ring-fenced from the rest of the portfolio, and spins out the moment it reaches patients.",
   ],
@@ -102,7 +102,7 @@ export const founders = [
   {
     name: "Rounnak Goho",
     role: "Co-founder & COO",
-    bio: "An operator who runs go-to-market and operations across the portfolio, turning early products into businesses — and keeping the studio disciplined enough to build one thing at a time.",
+    bio: "The operator who turns builds into businesses. Rounnak runs go-to-market and operations across the portfolio and protects the studio's focus when the easy move is always to do more.",
     image: "/founders/rounnak.jpg",
     linkedin: "#",
   },
@@ -115,17 +115,16 @@ export const marquee = {
     "Trust over metrics",
     "Years, not quarters",
     "One product at a time",
-    "Build for the decade",
-    "Focus over breadth",
-    "Earn it",
+    "Built to last",
+    "A house of brands",
   ],
   rowB: [
-    "Ship, don't pitch",
     "Minimal data, maximum care",
     "Retention over reach",
     "Independent by design",
-    "Built to last",
+    "Decades over demos",
     "Patient by design",
+    "Care at the core",
   ],
 } as const;
 

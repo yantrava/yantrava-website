@@ -13,7 +13,7 @@ export function Founders() {
     >
       <h2 className="sr-only">Founders</h2>
       <FadeUp>
-        <p className="label-mono mb-12" aria-hidden="true">The people building it</p>
+        <p className="label-mono mb-12" aria-hidden="true">Partners in Crime</p>
       </FadeUp>
 
       <div className="grid gap-16 md:grid-cols-2 md:gap-12">
@@ -41,6 +41,8 @@ function FounderCard({
   return (
     <article className={index === 1 ? "md:mt-24" : ""}>
       <motion.div
+        role="img"
+        aria-label={`${founder.name} — portrait coming soon`}
         className="relative aspect-[4/5] w-full overflow-hidden rounded-frame border border-[--color-ink-line]"
         initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0 0 0)" }}
         whileInView={
@@ -61,12 +63,17 @@ function FounderCard({
               "radial-gradient(120% 80% at 50% 20%, #1a1a1f, #050505 70%)",
           }}
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-display text-[9rem] italic leading-none text-bone/10">
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          aria-hidden="true"
+        >
+          <span className="font-display text-[clamp(5rem,28vw,9rem)] italic leading-none text-bone/10">
             {initials}
           </span>
         </div>
-        <span className="label-mono absolute bottom-6 left-6">Portrait</span>
+        <span className="label-mono absolute bottom-6 left-6" aria-hidden="true">
+          Portrait
+        </span>
       </motion.div>
 
       <div className="mt-6 flex items-end justify-between gap-4">

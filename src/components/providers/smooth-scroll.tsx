@@ -11,9 +11,15 @@ import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
  */
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    document.documentElement.classList.add("js-ready");
+    // Recompute trigger positions after the real web-font swap (the `load` event
+    // fires on subresources, not the font swap, so split/line metrics can shift
+    // after it). fonts.ready covers everyone, including reduced-motion users.
+    const refreshOnFonts = () => {
+      document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    };
 
     if (prefersReducedMotion()) {
+      refreshOnFonts();
       ScrollTrigger.refresh();
       return;
     }
@@ -30,8 +36,10 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
-    // Settle layout once fonts/images are in.
+    // Settle layout once fonts/images are in. fonts.ready fires after the swap;
+    // `load` is kept as a belt-and-braces fallback for image-driven reflow.
     const refresh = () => ScrollTrigger.refresh();
+    refreshOnFonts();
     window.addEventListener("load", refresh);
 
     return () => {
