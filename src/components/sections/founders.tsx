@@ -14,7 +14,7 @@ export function Founders() {
     >
       <h2 className="sr-only">Founders</h2>
       <FadeUp>
-        <p className="label-mono mb-12" aria-hidden="true">Partners in Crime</p>
+        <p className="label-mono mb-12" aria-hidden="true">Chief Conspirators</p>
       </FadeUp>
 
       <div className="grid gap-16 md:grid-cols-2 md:gap-12">
