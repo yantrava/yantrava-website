@@ -53,7 +53,6 @@ function FounderCard({
           alt={`${founder.name}, ${founder.role}`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          priority={index === 0}
           className="object-cover grayscale transition-[filter,transform] duration-700 ease-out hover:grayscale-0 hover:scale-[1.02]"
         />
       </motion.div>
