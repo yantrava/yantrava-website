@@ -123,7 +123,6 @@ export const marquee = {
     "Retention over reach",
     "Independent by design",
     "Decades over demos",
-    "Made to outlast",
     "Care at the core",
   ],
 } as const;
