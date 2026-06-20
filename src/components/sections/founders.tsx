@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { founders } from "@/lib/site";
 import { FadeUp } from "@/components/ui/fade-up";
@@ -33,17 +34,11 @@ function FounderCard({
   index: number;
 }) {
   const reduced = useReducedMotion();
-  const initials = founder.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("");
 
   return (
     <article className={index === 1 ? "md:mt-24" : ""}>
       <motion.div
-        role="img"
-        aria-label={`${founder.name} — portrait coming soon`}
-        className="relative aspect-[4/5] w-full overflow-hidden rounded-frame border border-[--color-ink-line]"
+        className="relative aspect-[4/5] w-full overflow-hidden rounded-frame border border-[--color-ink-line] bg-[--color-ink-raised]"
         initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0 0 0)" }}
         whileInView={
           reduced ? { opacity: 1 } : { clipPath: "inset(0% 0 0 0)" }
@@ -51,29 +46,16 @@ function FounderCard({
         viewport={{ once: true, margin: "-15% 0px" }}
         transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/*
-          Duotone placeholder. To use a real photo, replace this block with:
-            <Image src={founder.image} alt={founder.name} fill
-              className="object-cover grayscale" sizes="(max-width:768px) 100vw, 50vw" />
-        */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(120% 80% at 50% 20%, #1a1a1f, #050505 70%)",
-          }}
+        {/* Grayscale to unify the two shots on the monochrome theme; restores to
+            full colour on hover. */}
+        <Image
+          src={founder.image}
+          alt={`${founder.name}, ${founder.role}`}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          priority={index === 0}
+          className="object-cover grayscale transition-[filter,transform] duration-700 ease-out hover:grayscale-0 hover:scale-[1.02]"
         />
-        <div
-          className="absolute inset-0 flex items-center justify-center"
-          aria-hidden="true"
-        >
-          <span className="font-display text-[clamp(5rem,28vw,9rem)] italic leading-none text-bone/10">
-            {initials}
-          </span>
-        </div>
-        <span className="label-mono absolute bottom-6 left-6" aria-hidden="true">
-          Portrait
-        </span>
       </motion.div>
 
       <div className="mt-6 flex items-end justify-between gap-4">
