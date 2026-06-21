@@ -5,7 +5,7 @@ import { join } from "path";
 // Static share card — real logo lockup + positioning line on the black canvas.
 // Rendered once at build time (Node runtime keeps the route static). Next
 // auto-wires og:image + twitter:image.
-export const alt = "Yantrava Labs — a permanent builder of software brands";
+export const alt = "Yantrava Labs, a permanent builder of software brands";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -11,11 +11,7 @@ export function Model() {
       className="relative mx-auto max-w-[1280px] scroll-mt-24 px-6 py-28 md:px-10 md:py-44"
       aria-label="The model"
     >
-      <FadeUp>
-        <p className="label-mono mb-12">{model.label}</p>
-      </FadeUp>
-
-      {/* Manifesto — the emotional thesis, revealed word by word */}
+      {/* Manifesto: the emotional thesis, revealed word by word */}
       <div className="max-w-[820px]">
         <FadeUp>
           <p className="mb-6 max-w-[34ch] text-lg text-bone-faint md:text-xl">

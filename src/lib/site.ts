@@ -30,7 +30,7 @@ export const hero = {
 export const manifesto = {
   // Word-by-word reveal on scroll. Reads as a stance.
   lead: "Most software is built to capture attention.",
-  body: "We build software that earns trust, and keeps it. Small teams, AI as leverage, real products in people's hands.",
+  body: "We build software that earns trust, and then keep earning it. Small teams, real products, no shortcuts.",
 } as const;
 
 export const values = [
@@ -47,7 +47,7 @@ export const values = [
   {
     index: "03",
     title: "Think in decades",
-    body: "Most software optimises for the first week. We optimise for the long compound — durability over momentum.",
+    body: "Most software optimises for the first week. We optimise for the long compound. Durability over momentum.",
   },
   {
     index: "04",
@@ -72,7 +72,7 @@ export const ventures = [
     domain: "Health-tech",
     stage: "Pre-clinical · ring-fenced",
     tagline: "An early-warning system for cardiac care.",
-    body: "An AICD alert and monitoring system in development for cardiac patients and their clinicians. Ring-fenced from the rest of the portfolio from day one — it spins out into its own company on first clinical deployment.",
+    body: "An AICD alert and monitoring system in development for cardiac patients and their clinicians. Ring-fenced from the rest of the portfolio from day one. It spins out into its own company on first clinical deployment.",
     accent: "#7c4a52",
   },
 ] as const;
@@ -81,9 +81,9 @@ export const model = {
   label: "Model",
   heading: "Structured like a holding company. Built like a studio.",
   paragraphs: [
-    "Each product we build is its own company in miniature — its own name, its own identity, its own roadmap. Yantrava is the structure behind them, deliberately invisible to the people who actually use the products.",
+    "Each product we build is its own company in miniature: its own name, its own identity, its own roadmap. Yantrava is the structure behind them, deliberately invisible to the people who actually use the products.",
     "What the ventures share is infrastructure, capital discipline, and a way of building: small teams using AI as leverage to ship real products faster than their size suggests.",
-    "Risk is contained by design. CardioGuard's clinical exposure is ring-fenced from the rest of the portfolio, and spins out the moment it reaches patients.",
+    "Risk is contained by design. A venture carrying clinical or regulatory exposure is ring-fenced from day one and spins out as it matures, so one bet can never sink the others.",
   ],
 } as const;
 
@@ -95,7 +95,7 @@ export const founders = [
   {
     name: "Manav Jain",
     role: "Co-founder & CEO",
-    bio: "A founder-engineer who works hands-on across product, design, and strategy, using AI as a force multiplier to ship real software. Started Yantrava to build a portfolio of products that earn their users' trust.",
+    bio: "A founder-engineer who lives in the product: design, engineering, and strategy in one seat, shipping fast with a small team. He started Yantrava to build products people stay with for years.",
     image: "/founders/manav.jpg",
     linkedin: "#",
   },
@@ -129,7 +129,7 @@ export const marquee = {
 
 export const contact = {
   heading: "Build with us.",
-  body: "For investors, partners, press, and people who want to build things that last.",
+  body: "For investors, partners, press, and people who measure in decades, not launches.",
 } as const;
 
 export const nav = [

@@ -12,8 +12,8 @@ const SECTIONS = [
 ] as const;
 
 /**
- * A fixed editorial section index — `01 / 02 / 03 …` in the left gutter, the
- * active row widening and brightening as you scroll. Pure typographic restraint
+ * A fixed editorial section index in the left gutter: the section labels stacked
+ * vertically, the active one brightening as you scroll. Pure typographic restraint
  * (rauno / monopo register). Desktop-only and pointer-inert; never obscures content.
  */
 export function ScrollIndex() {
@@ -51,17 +51,10 @@ export function ScrollIndex() {
         {SECTIONS.map((s, i) => {
           const on = active === i;
           return (
-            <li key={s.id} className="flex flex-col">
+            <li key={s.id}>
               <span
-                className={`font-mono text-[0.65rem] tabular-nums transition-colors duration-500 ${
+                className={`block font-mono text-[0.6rem] uppercase leading-none tracking-[0.18em] transition-colors duration-500 ${
                   on ? "text-bone" : "text-bone-faint"
-                }`}
-              >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span
-                className={`overflow-hidden font-mono text-[0.55rem] uppercase leading-none tracking-[0.18em] text-bone transition-all duration-500 ${
-                  on ? "mt-1.5 max-h-4 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
                 {s.label}

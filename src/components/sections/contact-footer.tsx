@@ -20,10 +20,6 @@ export function ContactFooter() {
 
       <div className="relative mx-auto max-w-[1280px] px-6 pb-12 pt-28 md:px-10 md:pt-44">
         <FadeUp>
-          <p className="label-mono mb-10">Contact</p>
-        </FadeUp>
-
-        <FadeUp delay={0.05}>
           <h2 className="max-w-[14ch] text-[clamp(2.75rem,8vw,7rem)] font-medium leading-[0.95] tracking-[-0.03em] text-bone">
             Build with{" "}
             <span className="font-display font-normal italic">us.</span>
@@ -40,7 +36,6 @@ export function ContactFooter() {
           <Magnetic strength={0.25} className="mt-12">
             <a
               href={`mailto:${site.email}`}
-              data-cursor
               className="group inline-flex items-baseline gap-3 text-[clamp(1.5rem,4vw,2.75rem)] font-medium tracking-[-0.02em] text-bone"
             >
               <span className="relative">

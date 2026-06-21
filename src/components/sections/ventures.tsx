@@ -61,7 +61,6 @@ export function Ventures() {
           {/* Intro panel */}
           <div className="v-panel flex min-h-[80vh] flex-col justify-center px-6 md:h-screen md:px-16">
             <div className="mx-auto w-full max-w-[1100px]">
-              <p className="label-mono mb-8">Ventures · 02</p>
               <h2 className="max-w-[20ch] text-[clamp(2.2rem,5.5vw,5rem)] font-medium leading-[0.98] tracking-[-0.03em] text-bone">
                 Multiple ventures.
                 <span className="block font-display font-normal italic">

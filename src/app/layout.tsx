@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
-import { Cursor } from "@/components/ui/cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,11 +31,11 @@ const SITE_URL = "https://yantrava.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Yantrava Labs — A permanent builder of software brands",
+    default: "Yantrava Labs: A permanent builder of software brands",
     template: "%s · Yantrava Labs",
   },
   description:
-    "Yantrava Labs is a holding company building independent software product brands that earn long-term user trust — one product at a time. Built in India.",
+    "Yantrava Labs is a holding company building independent software product brands that earn long-term user trust, one product at a time. Built in India.",
   alternates: { canonical: "/" },
   keywords: [
     "Yantrava Labs",
@@ -52,9 +51,9 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     locale: "en_US",
-    title: "Yantrava Labs — A permanent builder of software brands",
+    title: "Yantrava Labs: A permanent builder of software brands",
     description:
-      "A holding company building independent software product brands that earn long-term user trust — one product at a time. Built in India.",
+      "A holding company building independent software product brands that earn long-term user trust, one product at a time. Built in India.",
     siteName: "Yantrava Labs",
   },
   twitter: {
@@ -82,7 +81,7 @@ const orgJsonLd = {
   url: SITE_URL,
   image: `${SITE_URL}/opengraph-image`,
   description:
-    "A holding company building independent software product brands that earn long-term user trust — one product at a time. Built in India.",
+    "A holding company building independent software product brands that earn long-term user trust, one product at a time. Built in India.",
   foundingLocation: { "@type": "Country", name: "India" },
   email: "support@yantrava.com",
 };
@@ -101,7 +100,6 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <Cursor />
         <SmoothScroll>{children}</SmoothScroll>
         <div className="grain" aria-hidden="true" />
         <script
