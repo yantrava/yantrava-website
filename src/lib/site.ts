@@ -63,7 +63,7 @@ export const ventures = [
     domain: "Consumer",
     stage: "Closed beta",
     tagline: "Plant care, made precise.",
-    body: "A plant-care companion that turns anxious guesswork into confident, science-backed care. Warm, precise, and built to be trusted with the things you're keeping alive.",
+    body: "Plant care without the guesswork. Rooted reads what each plant needs and tells you exactly when to act, warmly and precisely.",
     accent: "#4f7a5b",
   },
   {
@@ -72,7 +72,7 @@ export const ventures = [
     domain: "Health-tech",
     stage: "Pre-clinical · ring-fenced",
     tagline: "An early-warning system for cardiac care.",
-    body: "An AICD alert and monitoring system in development for cardiac patients and their clinicians. Ring-fenced from the rest of the portfolio from day one. It spins out into its own company on first clinical deployment.",
+    body: "An AICD alert and monitoring system in development for cardiac patients and their clinicians. Ring-fenced from the rest of the portfolio from day one. On first clinical use, it graduates into a company of its own.",
     accent: "#7c4a52",
   },
 ] as const;

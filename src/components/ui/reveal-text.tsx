@@ -5,9 +5,10 @@ import SplitType from "split-type";
 import { gsap, ScrollTrigger, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 /**
- * Word-by-word reveal driven by scroll. Text stays in the DOM (split-type only
- * wraps existing nodes), so it remains selectable and indexable for SEO. No-ops
- * into a plain render when reduced motion is requested.
+ * Word-by-word rise reveal that plays once as the block enters view (self-paced,
+ * not coupled to scroll velocity). Text stays in the DOM (split-type only wraps
+ * existing nodes), so it remains selectable and indexable for SEO. No-ops into a
+ * plain render when reduced motion is requested.
  */
 export function RevealText({
   children,
@@ -31,25 +32,18 @@ export function RevealText({
       gsap.to(split.words, {
         yPercent: 0,
         opacity: 1,
-        duration: 0.9,
+        // Smooth, self-paced reveal: plays once at a controlled tempo when the
+        // block enters view, so the rhythm never couples to scroll velocity (the
+        // old scrub felt clunky/rushed on a fast scroll). The gentle stagger lets
+        // the words flow up rather than pop in groups.
+        duration: scrub ? 1.1 : 0.9,
         ease: "power3.out",
-        stagger: scrub ? 0.4 : 0.035,
-        scrollTrigger: scrub
-          ? {
-              // Deliberate, cinematic reveal: spread over more scroll distance
-              // and resolve as the line block reaches vertical centre — not low
-              // and rushed in the bottom third of the viewport.
-              trigger: ref.current,
-              start: "top 92%",
-              end: "bottom 45%",
-              scrub: 0.8,
-            }
-          : {
-              trigger: ref.current,
-              start: "top 82%",
-              end: "top 42%",
-              once: true,
-            },
+        stagger: scrub ? 0.11 : 0.035,
+        scrollTrigger: {
+          trigger: ref.current,
+          start: scrub ? "top 78%" : "top 82%",
+          once: true,
+        },
       });
       return () => {
         split.revert();
