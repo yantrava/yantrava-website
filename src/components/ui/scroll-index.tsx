@@ -12,9 +12,10 @@ const SECTIONS = [
 ] as const;
 
 /**
- * A fixed editorial section index in the left gutter: the section labels stacked
- * vertically, the active one brightening as you scroll. Pure typographic restraint
- * (rauno / monopo register). Desktop-only and pointer-inert; never obscures content.
+ * A fixed editorial section index in the left gutter: a stack of tick lines, one
+ * per section; the active line widens and brightens and reveals its label as you
+ * scroll. Pure typographic restraint (rauno / monopo register). Desktop-only and
+ * pointer-inert; never obscures content.
  */
 export function ScrollIndex() {
   const [active, setActive] = useState(0);
@@ -51,10 +52,17 @@ export function ScrollIndex() {
         {SECTIONS.map((s, i) => {
           const on = active === i;
           return (
-            <li key={s.id}>
+            <li key={s.id} className="flex flex-col">
+              {/* Tick line — widens and brightens on the active section */}
               <span
-                className={`block font-mono text-[0.6rem] uppercase leading-none tracking-[0.18em] transition-colors duration-500 ${
-                  on ? "text-bone" : "text-bone-faint"
+                aria-hidden
+                className={`h-px transition-all duration-500 ${
+                  on ? "w-7 bg-bone" : "w-4 bg-bone-faint"
+                }`}
+              />
+              <span
+                className={`overflow-hidden font-mono text-[0.55rem] uppercase leading-none tracking-[0.18em] text-bone transition-all duration-500 ${
+                  on ? "mt-1.5 max-h-4 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
                 {s.label}
