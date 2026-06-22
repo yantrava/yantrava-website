@@ -52,7 +52,7 @@ export default function OpengraphImage() {
               color: "rgba(244,243,239,0.62)",
             }}
           >
-            Independent product brands that earn long-term trust. Built in India.
+            Independent product brands that earn long-term trust.
           </div>
         </div>
       </div>
