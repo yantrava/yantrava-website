@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s · Yantrava Labs",
   },
   description:
-    "Yantrava Labs is a holding company building independent software product brands that earn long-term user trust, one product at a time. Built in India.",
+    "Yantrava Labs is a holding company building independent software product brands that earn long-term user trust, one product at a time.",
   alternates: { canonical: "/" },
   keywords: [
     "Yantrava Labs",
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Yantrava Labs: A permanent builder of software brands",
     description:
-      "A holding company building independent software product brands that earn long-term user trust, one product at a time. Built in India.",
+      "A holding company building independent software product brands that earn long-term user trust, one product at a time.",
     siteName: "Yantrava Labs",
   },
   twitter: {
     card: "summary_large_image",
     title: "Yantrava Labs",
     description:
-      "A permanent builder of software brands that earn long-term user trust. Built in India.",
+      "A permanent builder of software brands that earn long-term user trust.",
   },
   robots: { index: true, follow: true },
 };
@@ -81,7 +81,7 @@ const orgJsonLd = {
   url: SITE_URL,
   image: `${SITE_URL}/opengraph-image`,
   description:
-    "A holding company building independent software product brands that earn long-term user trust, one product at a time. Built in India.",
+    "A holding company building independent software product brands that earn long-term user trust, one product at a time.",
   foundingLocation: { "@type": "Country", name: "India" },
   email: "support@yantrava.com",
 };
