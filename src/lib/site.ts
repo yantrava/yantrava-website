@@ -95,7 +95,7 @@ export const founders = [
   {
     name: "Manav Jain",
     role: "Co-founder & CEO",
-    bio: "A founder-engineer who lives inside the product, carrying engineering, strategy, and roadmap in one seat so a small team ships fast with nothing lost between roles. He started Yantrava to build the kind of applications people keep open for years.",
+    bio: "A founder-engineer who lives inside the product, carrying strategy, roadmap, and engineering in one seat so a small team ships fast with nothing lost between roles. He started Yantrava to build the kind of applications people keep open for years.",
     image: "/founders/manav.jpg",
     linkedin: "#",
   },
