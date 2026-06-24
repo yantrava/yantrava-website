@@ -1,0 +1,19 @@
+src/lib/site.ts
+  s_4b7e5fd2337f03::t_01149fd656f65d 98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.13",
+  "base_commit_sha": "6b9f3b9adc5d26009fbb9a297596d8a8bf67fce4",
+  "prompts": {},
+  "sessions": {
+    "s_4b7e5fd2337f03": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3b71d9cf-a96f-4a81-aed6-335d4610adf5",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "yss420 <yoursecretshare@gmail.com>"
+    }
+  }
+}
