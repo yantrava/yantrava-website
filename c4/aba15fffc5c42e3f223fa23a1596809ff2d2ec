@@ -1,0 +1,14 @@
+zz-hook-probe.txt
+  h_d6f44d9cb41099 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c4aba15fffc5c42e3f223fa23a1596809ff2d2ec",
+  "prompts": {},
+  "humans": {
+    "h_d6f44d9cb41099": {
+      "author": "yss420 <yoursecretshare@gmail.com>"
+    }
+  }
+}
