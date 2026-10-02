@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import { MotionProvider } from "@/components/providers/motion-provider";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -102,7 +103,9 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <SmoothScroll>{children}</SmoothScroll>
+        <MotionProvider>
+          <SmoothScroll>{children}</SmoothScroll>
+        </MotionProvider>
         <div className="grain" aria-hidden="true" />
         <Analytics />
         <SpeedInsights />
