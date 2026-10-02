@@ -1,0 +1,20 @@
+CLAUDE.md
+  s_65cd796fd8b0b8::t_3fed65e0ccf08e 34
+  s_65cd796fd8b0b8::t_21838b6f608920 33,35-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3026347f5c2cf56731f832f1579de2451af67978",
+  "prompts": {},
+  "sessions": {
+    "s_65cd796fd8b0b8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f2b62da1-b81c-48ee-98ed-a8109b05c758",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "yss420 <yoursecretshare@gmail.com>"
+    }
+  }
+}
