@@ -30,6 +30,20 @@ Next.js 15 (App Router) + React 19 · TypeScript · Tailwind CSS v4 · ESLint ·
 import alias `@/*` · Turbopack. Animation: **gsap** + **motion** (Motion for React).
 Deploy target: Vercel.
 
+### Motion rules
+
+- Imports: server components use `import * as motion from 'motion/react-client'`; client files use `motion/react`; never import `framer-motion`.
+- Hooks (`useScroll`, `useMotionValue`, `useReducedMotion`), `AnimatePresence` and `MotionConfig` live in `'use client'` files only.
+- Reduced motion is set once at the root: `MotionProvider` wraps the site in `<MotionConfig reducedMotion="user">`, so transform and layout animations stop under Reduce Motion while opacity and colour still animate. GSAP code keeps its own guard (`prefersReducedMotion()` in `src/lib/gsap.ts`), which `MotionConfig` does not cover.
+- `AnimatePresence`: keep it mounted with the condition inside, give each child a stable unique `key`, use `mode="wait"` to swap in place, and `mode="popLayout"` only with a non-static parent and ref-forwarding children.
+- `layout` for size or position changes; one shared `layoutId` for an element that moves between places; make each `layoutId` unique per instance with `useId()`.
+- Radix (if added): `asChild` plus a motion child, hoist the open state, and put the `forceMount` child inside `AnimatePresence`.
+- Animate `height` from `0` to `'auto'` only for small content, with `overflow: hidden`.
+- MotionValues: never call `.get()` in render; subscribe with `motionValue.on('change', fn)` (`onChange` is deprecated).
+- CSS for simple hover, shimmer and mount fades; Motion for interruptible springs, exits, layout, drag and scroll-linked effects.
+- Split: new UI and state motion uses Motion; GSAP is for pinned scrolltelling and the existing ScrollTrigger and Lenis setup.
+- Source: re-expressed in our own words from the Motion docs (motion.dev, MIT).
+
 ## Commands
 
 - `npm run dev` — dev server (Turbopack)
