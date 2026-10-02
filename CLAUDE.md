@@ -26,7 +26,7 @@ brands (Rooted, CardioGuard) but does not market them directly.
 
 ## Stack
 
-Next.js 15 (App Router) + React 19 · TypeScript · Tailwind CSS v4 · ESLint · `src/` dir ·
+Next.js 16 (App Router) + React 19 · TypeScript · Tailwind CSS v4 · ESLint · `src/` dir ·
 import alias `@/*` · Turbopack. Animation: **gsap** + **motion** (Motion for React).
 Deploy target: Vercel.
 
@@ -39,7 +39,7 @@ Deploy target: Vercel.
 - `layout` for size or position changes; one shared `layoutId` for an element that moves between places; make each `layoutId` unique per instance with `useId()`.
 - Radix (if added): `asChild` plus a motion child, hoist the open state, and put the `forceMount` child inside `AnimatePresence`.
 - Animate `height` from `0` to `'auto'` only for small content, with `overflow: hidden`.
-- MotionValues: never call `.get()` in render; subscribe with `motionValue.on('change', fn)` (`onChange` is deprecated).
+- MotionValues: never call `.get()` in render (it does not re-render); subscribe with `useMotionValueEvent(value, 'change', fn)`, or `value.on('change', fn)` inside a `useEffect` that returns the unsubscribe (`onChange` is deprecated).
 - CSS for simple hover, shimmer and mount fades; Motion for interruptible springs, exits, layout, drag and scroll-linked effects.
 - Split: new UI and state motion uses Motion; GSAP is for pinned scrolltelling and the existing ScrollTrigger and Lenis setup.
 - Source: re-expressed in our own words from the Motion docs (motion.dev, MIT).
