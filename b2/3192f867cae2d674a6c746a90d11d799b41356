@@ -1,7 +1,10 @@
 src/app/layout.tsx
   s_65cd796fd8b0b8::t_59885041a616ca 4,106-108
+  s_65cd796fd8b0b8::t_49f730ea09bcdf 4
+  s_65cd796fd8b0b8::t_058e53d9d3c906 106-108
 src/components/providers/motion-provider.tsx
   s_65cd796fd8b0b8::t_15e455958a90bb 1-13
+  s_65cd796fd8b0b8::t_2edb28e5175d31 1-13
 ---
 {
   "schema_version": "authorship/3.0.0",
