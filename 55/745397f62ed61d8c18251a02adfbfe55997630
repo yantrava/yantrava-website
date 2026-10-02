@@ -1,0 +1,19 @@
+REVIEW.md
+  s_65cd796fd8b0b8::t_e800db9eecaa88 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "55745397f62ed61d8c18251a02adfbfe55997630",
+  "prompts": {},
+  "sessions": {
+    "s_65cd796fd8b0b8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f2b62da1-b81c-48ee-98ed-a8109b05c758",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "yss420 <yoursecretshare@gmail.com>"
+    }
+  }
+}
