@@ -1,5 +1,7 @@
 .npmrc
   s_65cd796fd8b0b8::t_738a3742a5ca14 1-9
+  s_65cd796fd8b0b8::t_3112f7e407673a 1-3,5-9
+  s_65cd796fd8b0b8::t_6f27fd166f12b7 4
 ---
 {
   "schema_version": "authorship/3.0.0",
