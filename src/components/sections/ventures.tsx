@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { ventures } from "@/lib/site";
 
@@ -107,11 +108,32 @@ function VenturePanel({
               background: `radial-gradient(80% 60% at 50% 30%, ${venture.accent}40, transparent 60%), #060606`,
             }}
           />
-          <div className="absolute inset-0 flex items-end p-8">
-            <span className="font-display text-[clamp(3rem,7vw,6rem)] italic leading-none text-bone/12">
-              {venture.name}
-            </span>
-          </div>
+          {venture.shots.length > 0 ? (
+            // Real product screens, stepped like the founders ladder.
+            <div className="absolute inset-0 flex items-center justify-center gap-[6%] px-[10%]">
+              {venture.shots.map((shot, i) => (
+                <div
+                  key={shot.src}
+                  className="relative aspect-[9/16] w-[42%] overflow-hidden rounded-xl border border-[--color-ink-line] shadow-2xl"
+                  style={{ transform: `translateY(${i === 0 ? "-6%" : "6%"})` }}
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    fill
+                    sizes="(max-width: 768px) 40vw, 20vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="absolute inset-0 flex items-end p-8">
+              <span className="font-display text-[clamp(3rem,7vw,6rem)] italic leading-none text-bone/12">
+                {venture.name}
+              </span>
+            </div>
+          )}
           <span className="label-mono absolute left-8 top-8">{venture.domain}</span>
         </div>
 
@@ -133,6 +155,21 @@ function VenturePanel({
           <p className="mt-6 max-w-[44ch] text-lg leading-relaxed text-bone-dim">
             {venture.body}
           </p>
+          {venture.links.length > 0 && (
+            <div className="mt-8 flex flex-wrap gap-6">
+              {venture.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label-mono transition-colors hover:text-bone"
+                >
+                  {link.label} ↗
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </article>

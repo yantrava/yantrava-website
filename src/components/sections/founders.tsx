@@ -68,16 +68,14 @@ function FounderCard({
           </h3>
           <p className="mt-1 text-bone-faint">{founder.role}</p>
         </div>
-        {founder.linkedin !== "#" && (
-          <a
-            href={founder.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="label-mono shrink-0 transition-colors hover:text-bone"
-          >
-            LinkedIn ↗
-          </a>
-        )}
+        <a
+          href={founder.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="label-mono shrink-0 transition-colors hover:text-bone"
+        >
+          LinkedIn ↗
+        </a>
       </div>
       <p className="mt-5 max-w-[42ch] text-lg leading-relaxed text-bone-dim">
         {founder.bio}

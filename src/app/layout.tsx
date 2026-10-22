@@ -5,6 +5,7 @@ import { MotionProvider } from "@/components/providers/motion-provider";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { founders } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,7 @@ export const metadata: Metadata = {
     "venture studio",
     "AI software",
     "Rooted",
+    "Castle",
     "CardioGuard",
     "India",
   ],
@@ -87,6 +89,12 @@ const orgJsonLd = {
     "A holding company building independent software product brands that earn long-term user trust, one product at a time.",
   foundingLocation: { "@type": "Country", name: "India" },
   email: "support@yantrava.com",
+  founder: founders.map((f) => ({
+    "@type": "Person",
+    name: f.name,
+    jobTitle: f.role,
+    sameAs: f.linkedin,
+  })),
 };
 
 export default function RootLayout({
