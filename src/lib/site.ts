@@ -80,7 +80,7 @@ export const ventures = [
     domain: "Creator tools",
     stage: "Live · web",
     tagline: "Know why a video works before you post it.",
-    body: "A short-form video analyzer for creators, agencies, and brands. Castle scores a video before it goes out, shows where viewers are likely to drop off, and names the fixes.",
+    body: "A video analyzer for creators, agencies, and brands. Castle scores a video before it goes out, shows where viewers are likely to drop off, and names the fixes that keep them watching.",
     accent: "#565b9c",
     shots: [],
     links: [],
