@@ -109,7 +109,7 @@ export const founders = [
   {
     name: "Alexander Bleeker",
     role: "Co-founder & CMO",
-    bio: "Builds the foundation of marketing that people actually remember, then makes it earn its keep. Alexander leads how every venture is seen and found. Founded AI Marketing Alliance, now with 3,000+ senior marketers.",
+    bio: "Builds the foundation of marketing that people remember, then makes it earn its keep. Alexander leads how every venture is seen and found. Founded AI Marketing Alliance, now 3,000+ senior marketers.",
     image: "/founders/alexander.jpg",
     linkedin: "#",
   },

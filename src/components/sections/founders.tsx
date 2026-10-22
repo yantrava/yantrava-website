@@ -26,6 +26,10 @@ export function Founders() {
   );
 }
 
+// Each card steps lower than the last (a ladder) across the 3-column desktop
+// grid; the 2-column tablet grid keeps the original single offset.
+const LADDER = ["", "md:mt-24", "lg:mt-48"];
+
 function FounderCard({
   founder,
   index,
@@ -36,7 +40,7 @@ function FounderCard({
   const reduced = useReducedMotion();
 
   return (
-    <article className={index === 1 ? "md:mt-24" : ""}>
+    <article className={LADDER[index] ?? ""}>
       <motion.div
         className="relative aspect-[4/5] w-full overflow-hidden rounded-frame border border-[--color-ink-line] bg-[--color-ink-raised]"
         initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0 0 0)" }}
