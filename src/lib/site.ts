@@ -61,10 +61,29 @@ export const ventures = [
     id: "rooted",
     name: "Rooted",
     domain: "Consumer",
-    stage: "Closed beta",
+    stage: "Live on iOS & Android",
     tagline: "Plant care, made precise.",
     body: "Plant care without the guesswork. Rooted reads what each plant needs and tells you exactly when to act, warmly and precisely.",
     accent: "#4f7a5b",
+    shots: [
+      { src: "/ventures/rooted-01.jpg", alt: "Rooted identifying a plant from the camera" },
+      { src: "/ventures/rooted-02.jpg", alt: "Rooted home screen with weather-aware care for the day" },
+    ],
+    links: [
+      { label: "App Store", href: "https://apps.apple.com/app/rooted-plant-identifier-care/id6792287369" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.rooted.rooted" },
+    ],
+  },
+  {
+    id: "castle",
+    name: "Castle",
+    domain: "Creator tools",
+    stage: "Live · web",
+    tagline: "Know why a video works before you post it.",
+    body: "A video analyzer for creators, agencies, and brands. Castle scores a video before it goes out, shows where viewers are likely to drop off, and names the fixes that keep them watching.",
+    accent: "#565b9c",
+    shots: [],
+    links: [],
   },
   {
     id: "cardioguard",
@@ -74,6 +93,8 @@ export const ventures = [
     tagline: "An early-warning system for cardiac care.",
     body: "An AICD alert and monitoring system in development for cardiac patients and their clinicians. Ring-fenced from the rest of the portfolio from day one. On first clinical use, it graduates into a company of its own.",
     accent: "#7c4a52",
+    shots: [],
+    links: [],
   },
 ] as const;
 
@@ -87,24 +108,27 @@ export const model = {
   ],
 } as const;
 
-// NOTE (content gap flagged in review): bios are honest but role-led, not
-// "past-first". Before launch, Manav & Rounnak should each add 1–2 verifiable
-// prior facts (company, role, credential, shipped outcome). Set `linkedin` to a
-// real URL — links only render when this is not "#".
 export const founders = [
   {
     name: "Manav Jain",
     role: "Co-founder & CEO",
     bio: "A founder-engineer who lives inside the product, carrying strategy, roadmap, and engineering in one seat so a small team ships fast. He started Yantrava to build applications people keep open for years.",
     image: "/founders/manav.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/manavj10/",
   },
   {
     name: "Rounnak Goho",
     role: "Co-founder & COO",
     bio: "The operator who turns builds into businesses. Rounnak runs go-to-market and operations across the portfolio and protects the studio's focus when the easy move is always to do more.",
     image: "/founders/rounnak.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/rounnak-goho/",
+  },
+  {
+    name: "Alexander Bleeker",
+    role: "Co-founder & CMO",
+    bio: "Builds the foundation of marketing that people remember, then makes it earn its keep. Alexander leads how every venture is seen and found. Founded AI Marketing Alliance, now 3,000+ senior marketers.",
+    image: "/founders/alexander.jpg",
+    linkedin: "https://www.linkedin.com/in/alexander-bleeker/",
   },
 ] as const;
 

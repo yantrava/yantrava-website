@@ -17,7 +17,7 @@ export function Founders() {
         <p className="label-mono mb-12" aria-hidden="true">Chief Conspirators</p>
       </FadeUp>
 
-      <div className="grid gap-16 md:grid-cols-2 md:gap-12">
+      <div className="grid gap-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
         {founders.map((f, i) => (
           <FounderCard key={f.name} founder={f} index={i} />
         ))}
@@ -25,6 +25,10 @@ export function Founders() {
     </section>
   );
 }
+
+// Each card steps lower than the last (a ladder) across the 3-column desktop
+// grid; the 2-column tablet grid keeps the original single offset.
+const LADDER = ["", "md:mt-24", "lg:mt-48"];
 
 function FounderCard({
   founder,
@@ -36,7 +40,7 @@ function FounderCard({
   const reduced = useReducedMotion();
 
   return (
-    <article className={index === 1 ? "md:mt-24" : ""}>
+    <article className={LADDER[index] ?? ""}>
       <motion.div
         className="relative aspect-[4/5] w-full overflow-hidden rounded-frame border border-[--color-ink-line] bg-[--color-ink-raised]"
         initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0 0 0)" }}
@@ -52,7 +56,7 @@ function FounderCard({
           src={founder.image}
           alt={`${founder.name}, ${founder.role}`}
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover grayscale transition-[filter,transform] duration-700 ease-out hover:grayscale-0 hover:scale-[1.02]"
         />
       </motion.div>
@@ -64,16 +68,14 @@ function FounderCard({
           </h3>
           <p className="mt-1 text-bone-faint">{founder.role}</p>
         </div>
-        {founder.linkedin !== "#" && (
-          <a
-            href={founder.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="label-mono shrink-0 transition-colors hover:text-bone"
-          >
-            LinkedIn ↗
-          </a>
-        )}
+        <a
+          href={founder.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="label-mono shrink-0 transition-colors hover:text-bone"
+        >
+          LinkedIn ↗
+        </a>
       </div>
       <p className="mt-5 max-w-[42ch] text-lg leading-relaxed text-bone-dim">
         {founder.bio}
