@@ -17,7 +17,7 @@ export function Founders() {
         <p className="label-mono mb-12" aria-hidden="true">Chief Conspirators</p>
       </FadeUp>
 
-      <div className="grid gap-16 md:grid-cols-2 md:gap-12">
+      <div className="grid gap-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
         {founders.map((f, i) => (
           <FounderCard key={f.name} founder={f} index={i} />
         ))}
@@ -52,7 +52,7 @@ function FounderCard({
           src={founder.image}
           alt={`${founder.name}, ${founder.role}`}
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover grayscale transition-[filter,transform] duration-700 ease-out hover:grayscale-0 hover:scale-[1.02]"
         />
       </motion.div>

@@ -106,6 +106,13 @@ export const founders = [
     image: "/founders/rounnak.jpg",
     linkedin: "#",
   },
+  {
+    name: "Alexander Bleeker",
+    role: "Co-founder & CMO",
+    bio: "The marketer who builds what people remember, then makes it show up in pipeline. Alexander leads brand across the portfolio. He was employee #40 at Hopin and founded the AI Marketing Alliance, now 3,000+ senior marketers.",
+    image: "/founders/alexander.jpg",
+    linkedin: "#",
+  },
 ] as const;
 
 // Positioning ticker — meta tokens, not a testimonial carousel (the cliché).
