@@ -109,7 +109,7 @@ export const founders = [
   {
     name: "Alexander Bleeker",
     role: "Co-founder & CMO",
-    bio: "The marketer who builds what people remember, then makes it show up in pipeline. Alexander leads brand across the portfolio. He was employee #40 at Hopin and founded the AI Marketing Alliance, now 3,000+ senior marketers.",
+    bio: "The storyteller who builds brands people remember, then makes them earn their keep. Alexander shapes how each venture is seen and found. Founded AI Marketing Alliance, now with 3,000+ senior marketers.",
     image: "/founders/alexander.jpg",
     linkedin: "#",
   },
