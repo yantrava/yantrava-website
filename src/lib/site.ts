@@ -119,14 +119,14 @@ export const founders = [
   {
     name: "Rounnak Goho",
     role: "Co-founder & COO",
-    bio: "The operator who turns builds into businesses. Rounnak runs operations across the portfolio, keeps every venture's cadence steady, and protects the studio's focus when the easy move is always to do more.",
+    bio: "The operator who turns builds into businesses. Rounnak runs operations across the portfolio, keeps every venture running smoothly, and protects the studio's focus when the easy move is always to do more.",
     image: "/founders/rounnak.jpg",
     linkedin: "https://www.linkedin.com/in/rounnak-goho/",
   },
   {
     name: "Alexander Bleeker",
     role: "Co-founder & CRO",
-    bio: "Builds the foundation of marketing that people remember, then makes it earn its keep. He leads how every venture is seen, found, and chosen. Founded AI Marketing Alliance, now 3,000+ senior marketers.",
+    bio: "Builds the foundation of marketing that people remember, then makes it earn its keep. Alex leads how every venture is seen, found, and chosen. Founded AI Marketing Alliance, now 3,000+ senior marketers.",
     image: "/founders/alexander.jpg",
     linkedin: "https://www.linkedin.com/in/alexander-bleeker/",
   },
