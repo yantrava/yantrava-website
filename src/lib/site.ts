@@ -119,7 +119,7 @@ export const founders = [
   {
     name: "Rounnak Goho",
     role: "Co-founder & COO",
-    bio: "The operator who turns builds into businesses. Rounnak runs operations across the portfolio, keeps every launch on schedule, and protects the studio's focus when the easy move is always to do more.",
+    bio: "The operator who turns builds into businesses. Rounnak runs operations across the portfolio, keeps every venture's cadence steady, and protects the studio's focus when the easy move is always to do more.",
     image: "/founders/rounnak.jpg",
     linkedin: "https://www.linkedin.com/in/rounnak-goho/",
   },
